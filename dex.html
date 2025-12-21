@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAP - BITEXGLOBAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/shibaswap.png">
+</head>
+<body>
+    <div class="container">
+
+        <!-- DEX Page -->
+        <div id="dexPage" class="page active">
+            <div class="dex-container">
+                <a href="index.html" class="back-btn">← Back to Home</a>
+                <div class="dex-header">
+                    <h2>Swap Tokens</h2>
+                    <p style="opacity: 0.8;">SWAP</p>
+                </div>
+
+                <div id="swapInterface">
+                    <div class="swap-box">
+                        <div class="swap-label">
+                            <span>You Pay</span>
+                            <span>Balance: 0.00</span>
+                        </div>
+                        <div class="token-input">
+                            <input type="number" id="bnbAmount" placeholder="0.0" step="0.01" min="0" oninput="calculateShiba()">
+                            <div class="token-select">
+                                <img src="images/bnblogo.png" alt="BNB" class="token-icon">
+                                <span>BNB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swap-arrow">↓</div>
+
+                    <div class="swap-box">
+                        <div class="swap-label">
+                            <span>You Receive</span>
+                            <span>Balance: 0.00</span>
+                        </div>
+                        <div class="token-input">
+                            <input type="number" id="shibaAmount" placeholder="0.0" readonly>
+                            <div class="token-select">
+                                <img src="images/shibalogo.png" alt="SHIB" class="token-icon">
+                                <span>SHIB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-info">
+                        <div class="price-row">
+                            <span>Market Price:</span>
+                            <span id="marketPrice">Loading...</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Your Price:</span>
+                            <span id="yourPrice">Loading...</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Discount:</span>
+                            <span class="discount-badge">30% OFF (Ongoing)</span>
+                        </div>
+                        <div class="price-row">
+                            <span>BNB Price:</span>
+                            <span id="bnbPrice">Loading...</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-submit" onclick="executeSwap()">Swap</button>
+                </div>
+
+                <div id="loadingState" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing swap...</p>
+                </div>
+
+                <div id="successState" class="loading" style="display: none;">
+                    <div style="font-size: 4em; margin-bottom: 20px;">✓</div>
+                    <h3>Swap Successful!</h3>
+                    <p style="margin-top: 10px; opacity: 0.8;">Your transaction is complete</p>
+                    <button class="btn btn-reset" onclick="resetSwap()">Make Another Swap</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dex.js"></script>
+</body>
+</html>
