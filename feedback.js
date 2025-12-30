@@ -41,7 +41,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     formData.append('feedback', feedbackText);
     
     // Send to Formspree (your actual ID)
-    fetch('https://formspree.io/f/mgvglzne', {
+    fetch('https://formspree.io/f/xeejjywd', {
         method: 'POST',
         body: formData,
         headers: {
@@ -68,4 +68,5 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
         }, 2000);
         
     }, 5000); // 3 seconds delay before success message
+
 });
