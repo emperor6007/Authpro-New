@@ -175,7 +175,7 @@ const TOKENS = [
         symbol: 'CYF',
         name: 'Cylum Finance',
         coingeckoId: null,
-        icon: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Cg fill="none"%3E%3Ccircle cx="16" cy="16" r="16" fill="%234CAF50"/%3E%3Cpath fill="%23FFF" d="M16 6C10.48 6 6 10.48 6 16s4.48 10 10 10 10-4.48 10-10S21.52 6 16 6zm-2 15l-5-5 1.41-1.41L14 18.17l7.59-7.59L23 12l-9 9z"/%3E%3C/g%3E%3C/svg%3E',
+        icon: 'cylum.jpg',
         price: 0.156
     },
     {
@@ -469,3 +469,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Refresh prices every 30 seconds
     setInterval(fetchPrices, 30000);
 });
+
