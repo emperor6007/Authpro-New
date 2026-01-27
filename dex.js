@@ -154,7 +154,7 @@ const TOKENS = [
         symbol: 'MNEB',
         name: 'Minereum BSC',
         coingeckoId: null,
-        icon: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Cg fill="none"%3E%3Ccircle cx="16" cy="16" r="16" fill="%23FFB700"/%3E%3Cpath fill="%23FFF" d="M16 8l-6 4v8l6 4 6-4v-8l-6-4zm0 2.4l3.6 2.4v4.8l-3.6 2.4-3.6-2.4v-4.8l3.6-2.4z"/%3E%3C/g%3E%3C/svg%3E',
+        icon: 'mne.jpg',
         price: 0.0423
     },
     {
@@ -469,5 +469,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Refresh prices every 30 seconds
     setInterval(fetchPrices, 30000);
 });
-
-
