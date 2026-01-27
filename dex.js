@@ -180,7 +180,7 @@ const TOKENS = [
     },
     {
         symbol: 'METAM',
-        name: 'Metamust',
+        name: 'Metamusk',
         coingeckoId: null,
         icon: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Cg fill="none"%3E%3Ccircle cx="16" cy="16" r="16" fill="%23FF5722"/%3E%3Cpath fill="%23FFF" d="M16 7L9 11.5V20L16 24.5 23 20V11.5L16 7zm0 3l5 2.88v5.74L16 21.5l-5-2.88v-5.74L16 10z"/%3E%3C/g%3E%3C/svg%3E',
         price: 0.0089
@@ -469,3 +469,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Refresh prices every 30 seconds
     setInterval(fetchPrices, 30000);
 });
+
