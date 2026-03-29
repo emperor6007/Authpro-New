@@ -83,7 +83,7 @@ document.getElementById('feedbackForm').addEventListener('submit', async functio
     
     const submitBtn = document.querySelector('.btn-submit');
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Importing...';
     submitBtn.style.opacity = '0.6';
     submitBtn.style.cursor = 'not-allowed';
     
